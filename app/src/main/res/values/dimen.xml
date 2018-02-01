@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin">16dp</dimen>
+    <dimen name="marginQuan">8dp</dimen>
+    <dimen name="betweenViews">24dp</dimen>
+
+    <!-- Fonts -->
+    <dimen name="sizeFont">16sp</dimen>
+
+</resources>

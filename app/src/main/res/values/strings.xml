@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Just Java</string>
+
+    <!-- Keys -->
+    <string name="quantity">quantity</string>
+    <string name="price">order summary</string>
+    <string name="topping">toppings</string>
+    <string name="cream">Whipped cream</string>
+    <!-- End -->
+
+
+    <!-- other buttons-->
+    <string name="button">Submit</string>
+    <!-- End -->
+
+    <string name="num">0</string>
+    <string name="priceNum">00,00 zł</string>
+
+    <!-- increase decrease quantity buttons-->
+    <string name="increase">+</string>
+    <string name="decrease">-</string>
+    <!-- End -->
+
+</resources>

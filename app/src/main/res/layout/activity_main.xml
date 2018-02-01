@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+
+    tools:context="com.example.android.justjava.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <!-- Toppings key -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/topping"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin"
+        android:textSize="@dimen/sizeFont" />
+
+    <!-- check box layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/margin"
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/cream"
+            android:textSize="@dimen/sizeFont"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/betweenViews"
+            />
+
+
+
+
+
+    </LinearLayout>
+    <!-- END OF check box layout -->
+
+
+    <!-- Quantity key -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quantity"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- quantity buttons layout -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <!-- increase quantity button-->
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/increase"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin"
+        android:onClick="increase"
+
+        />
+
+    <!-- Quantity number -->
+    <TextView
+        android:id="@+id/quantity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/num"
+        android:layout_marginLeft="@dimen/marginQuan"
+        android:layout_marginRight="@dimen/marginQuan"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/sizeFont"
+        />
+    <!-- decrease quantity button -->
+    <Button
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/decrease"
+        android:textStyle="bold"
+        android:onClick="decrease"
+
+        />
+    </LinearLayout>
+    <!-- END OF quantity buttons layout -->
+
+    <!-- Price key -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- Price number -->
+    <TextView
+        android:id="@+id/order_summary_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/priceNum"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginStart="@dimen/margin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- Button -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin"
+        android:onClick="submitOrder"
+
+        />
+    <!-- Price key -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- Price number -->
+    <TextView
+        android:id="@+id/order_summary_text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/priceNum"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginStart="@dimen/margin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- Button -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin"
+        android:onClick="submitOrder"
+
+        />
+    <!-- Price key -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:textColor="@color/black"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/margin"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- Price number -->
+    <TextView
+        android:id="@+id/order_summary_text_view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/priceNum"
+        android:layout_marginLeft="@dimen/margin"
+        android:layout_marginStart="@dimen/margin"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/sizeFont"
+        />
+
+    <!-- Button -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin"
+        android:onClick="submitOrder"
+
+        />
+
+
+    </LinearLayout>
+
+</ScrollView>
