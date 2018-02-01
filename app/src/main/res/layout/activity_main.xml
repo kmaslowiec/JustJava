@@ -15,6 +15,13 @@
         android:orientation="vertical"
         >
 
+    <!-- Text to enter -->
+
+        <EditText
+            android:id="@+id/text_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     <!-- Toppings key -->
 
     <TextView
@@ -28,19 +35,28 @@
         android:textSize="@dimen/sizeFont" />
 
     <!-- check box layout -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+
 
         <CheckBox
-            android:id="@+id/checkbox"
+            android:id="@+id/cream"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/margin"
+
             android:layout_marginLeft="@dimen/margin"
             android:text="@string/cream"
+            android:textSize="@dimen/sizeFont"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:paddingLeft="@dimen/betweenViews"
+            />
+
+        <CheckBox
+            android:id="@+id/choco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/choco"
             android:textSize="@dimen/sizeFont"
             android:textColor="@color/black"
             android:textStyle="bold"
@@ -51,7 +67,6 @@
 
 
 
-    </LinearLayout>
     <!-- END OF check box layout -->
 
 
@@ -144,7 +159,7 @@
         android:onClick="submitOrder"
 
         />
-   
+
 
 
     </LinearLayout>

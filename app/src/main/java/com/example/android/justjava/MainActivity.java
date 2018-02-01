@@ -2,8 +2,10 @@ package com.example.android.justjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -46,9 +48,16 @@ public class MainActivity extends AppCompatActivity {
     }*/
     ///////////// MY METHODS
 
+    private Editable name(){
+
+        EditText txt = findViewById(R.id.text_field);
+
+        return txt.getText();
+
+    }
 
     /**
-     * @param CheckBox id
+     * @param int id
      * @return true or false when the param box is clicked
      */
     private boolean checked(int i) {
@@ -78,8 +87,9 @@ public class MainActivity extends AppCompatActivity {
      */
     private String createOrderSummary(int price) {
 
-        String priceMsg = "Name: Konrad Maslowiec\n";
-        priceMsg += "Whipped cream? " + checked(R.id.checkbox) + "\n";
+        String priceMsg = "Name: " + name() +"\n";
+        priceMsg += "Whipped cream? " + checked(R.id.cream) + "\n";
+        priceMsg += "Chocolate? " + checked(R.id.choco) + "\n";
         priceMsg += "Quantity: " + quan + "\n";
         priceMsg += "Total: " + price + "\n";
         priceMsg += "Thank you";
