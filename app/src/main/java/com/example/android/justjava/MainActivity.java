@@ -7,14 +7,16 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quan = 0;
+    int quan = 1;
     int price = 5;
+
     //CheckBox box = findViewById(R.id.checkbox);
 
 
@@ -48,16 +50,22 @@ public class MainActivity extends AppCompatActivity {
     }*/
     ///////////// MY METHODS
 
-    private Editable name(){
+    /**
+     *
+     * @param i the id of EditBox (R.id.name)
+     * @return
+     */
 
-        EditText txt = findViewById(R.id.text_field);
+    private Editable name(int i){
+
+        EditText txt = findViewById(i);
 
         return txt.getText();
 
     }
 
     /**
-     * @param int id
+     * @param i the id of CheckBox (R.id.name)
      * @return true or false when the param box is clicked
      */
     private boolean checked(int i) {
@@ -76,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int calculatePrice() {
 
-        int price = quan * this.price;
+        int creamPrice = (checked(R.id.cream))? 1 : 0;
+        int chocoPrice = (checked(R.id.choco))? 2 : 0;
+
+        int price = (creamPrice + chocoPrice + this.price ) * quan ;
 
         return price;
     }
@@ -87,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private String createOrderSummary(int price) {
 
-        String priceMsg = "Name: " + name() +"\n";
+        String priceMsg = "Name: " + name(R.id.text_field) +"\n";
         priceMsg += "Whipped cream? " + checked(R.id.cream) + "\n";
         priceMsg += "Chocolate? " + checked(R.id.choco) + "\n";
         priceMsg += "Quantity: " + quan + "\n";
@@ -131,6 +142,12 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
 
 
+
+        if(quan==100){
+
+            Toast.makeText(this, "You cannot have less than 100 coffee", Toast.LENGTH_SHORT).show();
+            return;
+        }
         quan++;
 
         displayQuantity(quan);
@@ -140,10 +157,12 @@ public class MainActivity extends AppCompatActivity {
     public void decrease(View view) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
 
-        if (quan > 0) {
-            quan--;
-        }
+        if (quan == 1) {
+            Toast.makeText(this, "You cannot have less than 1 coffee", Toast.LENGTH_SHORT).show();
 
+            return;
+        }
+        quan--;
 
         displayQuantity(quan);
 

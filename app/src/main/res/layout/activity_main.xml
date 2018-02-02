@@ -20,7 +20,11 @@
         <EditText
             android:id="@+id/text_field"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_name"
+            android:inputType="textCapWords"
+
+            />
 
     <!-- Toppings key -->
 

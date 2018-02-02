@@ -9,12 +9,15 @@
     <string name="choco">Chocolate</string>
     <!-- End -->
 
+    <!-- EditTexts -->
+    <string name="hint_name">Enter your name</string>
+    <!-- End -->
 
     <!-- other buttons-->
     <string name="button">Submit</string>
     <!-- End -->
 
-    <string name="num">0</string>
+    <string name="num">1</string>
     <string name="priceNum">00,00 zł</string>
 
     <!-- increase decrease quantity buttons-->
