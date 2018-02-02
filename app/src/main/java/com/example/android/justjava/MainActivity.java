@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     int quan = 1;
     int price = 5;
 
+
     //CheckBox box = findViewById(R.id.checkbox);
 
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+
     }
 
     /**
@@ -51,14 +53,20 @@ public class MainActivity extends AppCompatActivity {
         return result;
     }*/
     ///////////// MY METHODS
+    public String yes_no(boolean fact) {
+
+        String yes_no = (fact) ? this.getString(R.string.yes) : this.getString(R.string.no);
+
+        return yes_no;
+
+    }
 
     /**
-     *
      * @param i the id of EditBox (R.id.name)
      * @return
      */
 
-    private Editable name(int i){
+    private Editable name(int i) {
 
         EditText txt = findViewById(i);
 
@@ -73,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean checked(int i) {
         CheckBox box = findViewById(i);
 
+
         return box.isChecked();
 
     }
@@ -86,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int calculatePrice() {
 
-        int creamPrice = (checked(R.id.cream))? 1 : 0;
-        int chocoPrice = (checked(R.id.choco))? 2 : 0;
+        int creamPrice = (checked(R.id.cream)) ? 1 : 0;
+        int chocoPrice = (checked(R.id.choco)) ? 2 : 0;
 
-        int price = (creamPrice + chocoPrice + this.price ) * quan ;
+        int price = (creamPrice + chocoPrice + this.price) * quan;
 
         return price;
     }
@@ -100,12 +109,13 @@ public class MainActivity extends AppCompatActivity {
      */
     private String createOrderSummary(int price) {
 
-        String priceMsg = "Name: " + name(R.id.text_field) +"\n";
-        priceMsg += "Whipped cream? " + checked(R.id.cream) + "\n";
-        priceMsg += "Chocolate? " + checked(R.id.choco) + "\n";
-        priceMsg += "Quantity: " + quan + "\n";
-        priceMsg += "Total: " + price + "\n";
-        priceMsg += "Thank you";
+
+        String priceMsg = this.getString(R.string.name) + name(R.id.text_field) + "\n";
+        priceMsg += this.getString(R.string.cream) + "? " + yes_no(checked(R.id.cream)) + "\n";
+        priceMsg += this.getString(R.string.choco) + "? " + yes_no(checked(R.id.choco)) + "\n";
+        priceMsg += this.getString(R.string.quan) + quan + "\n";
+        priceMsg += this.getString(R.string.total) + price + "\n";
+        priceMsg += this.getString(R.string.thanks);
 
 
         return priceMsg;
@@ -136,13 +146,26 @@ public class MainActivity extends AppCompatActivity {
         String msg = createOrderSummary(price);
         displayMessage(msg);*/
 
+        int price = calculatePrice();
+        String msg = createOrderSummary(price);
 
-            Intent intent = new Intent(Intent.ACTION_VIEW);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:kmaslowiec@onet.pl")); // only email apps should handle this
+        //intent.putExtra(Intent.EXTRA_EMAIL, "");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "JustJava order for " + name(R.id.text_field));
+        intent.putExtra(Intent.EXTRA_TEXT, msg);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
+
+
+        //THIS IS GOOGLE MAP
+           /* Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse("geo:0,0?q=14+Kosynierow+Poland"));
             if (intent.resolveActivity(getPackageManager()) != null) {
                 startActivity(intent);
             }
-
+*/
 
     }
 
@@ -153,10 +176,9 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
 
 
+        if (quan == 100) {
 
-        if(quan==100){
-
-            Toast.makeText(this, "You cannot have less than 100 coffee", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toas_100, Toast.LENGTH_SHORT).show();
             return;
         }
         quan++;
@@ -169,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
 
         if (quan == 1) {
-            Toast.makeText(this, "You cannot have less than 1 coffee", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toas_1, Toast.LENGTH_SHORT).show();
 
             return;
         }

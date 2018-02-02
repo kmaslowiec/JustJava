@@ -94,12 +94,14 @@
 
     <!-- increase quantity button-->
     <Button
+        android:id="@+id/button"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:text="@string/increase"
         android:textStyle="bold"
         android:layout_marginLeft="@dimen/margin"
         android:onClick="increase"
+
 
         />
 

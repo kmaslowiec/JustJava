@@ -25,4 +25,19 @@
     <string name="decrease">-</string>
     <!-- End -->
 
+    <!-- Java -->
+    <string name="toas_100">You cannot have less than 100 coffee</string>
+    <string name="toas_1">You cannot have less than 1 coffee</string>
+
+    <string name="yes">yes</string>
+    <string name="no">no</string>
+
+    <!-- Order summary -->
+    <string name="name">Name: </string>
+    <string name="quan">"Quantity: "</string>
+    <string name="total">"Total: "</string>
+    <string name="thanks">"Thank you"</string>
+
+
+    <!-- End -->
 </resources>
